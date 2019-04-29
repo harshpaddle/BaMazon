@@ -103,7 +103,7 @@ function addStock() {
       name: "item_num",
       type: "number",
       validate: function (input) {
-        if (!isNaN(input) && (input > 0 && input < 11)) {
+        if (!isNaN(input) && (input > 0 && input < result.length)) {
           return true;
         } else {
           return "please enter a valid item #"

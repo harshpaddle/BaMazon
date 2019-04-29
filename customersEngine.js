@@ -73,7 +73,7 @@ function choose() {
       message: "Please enter the Item# of the product you'd like to purchase?",
       type: "number",
       validate: function (input) {
-        if (!isNaN(input) && (input > 0 && input < 11)) {
+        if (!isNaN(input) && (input > 0 && input < result.length)) {
           return true;
         } else {
           return "please enter a valid item #"
@@ -112,7 +112,7 @@ function processOrder(product, amount) {
   market_db.query("UPDATE products SET avail_stock = ? where id = ?", [(product.avail_stock - amount), product.id], function (error, response) {
     if (error) throw error;
     
-    console.log("\x1b[5m\x1b[45m\x1b[1m"
+    console.log("\x1b[5m\x1b[44m\x1b[1m"
       , "Order Completed --- You purchased " + amount + ' ' + product.product_name + 's', "\x1b[0m");
     console.log("Your confirmation # is - " + (Math.floor(Math.random() * 1000000000)));
     console.log("thank you, please buy more, we hungaryyy");
