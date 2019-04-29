@@ -1,3 +1,7 @@
+// require("dotenv").config();
+
+// var keys = require("./keys");
+
 var mysql = require("mysql");
 
 var inquirer = require("inquirer");
@@ -67,11 +71,25 @@ function choose() {
     inquirer.prompt([{
       name: "selected_id",
       message: "Please enter the Item# of the product you'd like to purchase?",
-      type: "number"
+      type: "number",
+      validate: function (input) {
+        if (!isNaN(input) && (input > 0 && input < 11)) {
+          return true;
+        } else {
+          return "please enter a valid item #"
+        }
+      }
     }, {
       name: "selected_quantity",
       message: "Please enter how many of amount of quantity for the selected product?",
-      type: "number"
+      type: "number",
+      validate: function (input) {
+        if (isNaN(input)) {
+          return "please enter a valid amount you would like to purchase"
+        } else {
+          return true;
+        }
+      }
     }]).then(function(invoice) {
 
       const selectedProduct = result.find(product => product.id === invoice.selected_id)
@@ -94,7 +112,11 @@ function processOrder(product, amount) {
   market_db.query("UPDATE products SET avail_stock = ? where id = ?", [(product.avail_stock - amount), product.id], function (error, response) {
     if (error) throw error;
     
-    console.log(response);
-    kickStart();
+    console.log("\x1b[5m\x1b[45m\x1b[1m"
+      , "Order Completed --- You purchased " + amount + ' ' + product.product_name + 's', "\x1b[0m");
+    console.log("Your confirmation # is - " + (Math.floor(Math.random() * 1000000000)));
+    console.log("thank you, please buy more, we hungaryyy");
+    
+    choose();
   })
 }
