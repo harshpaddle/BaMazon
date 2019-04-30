@@ -51,7 +51,7 @@ function browse() {
   market_db.query("SELECT * FROM products", function (error, res) {
     if (error) throw error;
 
-    console.log("\x1b[5m\x1b[45m\x1b[1m", "Welcome to Bali-baba - your one stop shop", "\x1b[0m");
+    console.log("\x1b[5m\x1b[45m\x1b[1m", "Welcome to BaMazon - your one stop shop", "\x1b[0m");
 
     // extract and print each product from database response
     res.forEach(product => {

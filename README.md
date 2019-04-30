@@ -1,20 +1,19 @@
-# BAMazon
+# BaMazon
 
 Created during Week 12 of Rutgers Coding Bootcamp. The goal was to create an Amazon-like store front using Node.js and MySQL.
 
-## Getting Started
+## Getting Started(with Node)
 
 - Clone repo.
 - Run command in Terminal or Gitbash 'npm install'
 - Run command depending which mode you would like to be on:
-    * Customer - 'npm run customer'
-    * Manager - 'npm run manager'
-    
+    * Customer - 'node customerBamazon.js'
+    * Manager - 'node managerBamazon.js'
 - Run 'ctrl + c' to exit each mode
 
 ### What Each JavaScript Does
 
-1. `BamazonCustomer.js`
+1. `customerBamazon.js`
 
     * Prints the products in the store.
 
@@ -29,14 +28,13 @@ Created during Week 12 of Rutgers Coding Bootcamp. The goal was to create an Ama
 
 -----------------------
 
-2. `BamazonManager.js`
+2. `managerBamazon.js`
 
     * Starts with a menu:
         * View Products for Sale
         * View Low Inventory
         * Add to Inventory
-        * Add New Product
-        * End Session
+        * Add a New Product
 
     * If the manager selects `View Products for Sale`, it lists all of the products in the store including all of their details.
 
@@ -46,35 +44,34 @@ Created during Week 12 of Rutgers Coding Bootcamp. The goal was to create an Ama
 
     * If the manager selects `Add New Product`, it allows the manager to add a new product to the store.
 
-    * If the manager selects `End Session`, it ends the session and doesn't go back to the menu.
 
------------------------
 
-3. `BamazonExecutive.js`
+## Demo Gifs
 
-    * Starts with a menu:
-        * View Product Sales by Department
-        * Create New Department
-        * End Session
+*Client Side view*
 
-    * If the manager selects `View Product Sales by Department`, it lists the Department Sales and calculates the total sales from the overhead cost and product sales.
+* ![customerBamazon.js](https://media.giphy.com/media/dYd6zggxYZT7n9pnHk/giphy.gif)
 
-    * If the manager selects `Create New Department`, it allows the manager to create a new department and input current overhead costs and product sales. If there are none, by default it will set at 0.
 
-    * If the manager selects `End Session`, it ends the session and doesn't go back to the menu.
+*Manager Side View*
 
-## Demo Videos
+1. View products for sale-
+* ![managerBamazon.js](https://media.giphy.com/media/5PhoMdmSuhJBw80eXF/giphy.gif)
 
-* BamazonCustomer.js (https://www.youtube.com/watch?v=p-QBusgtjKE)
+2. View products with low quantity-
+* ![managerBamazon.js](https://media.giphy.com/media/5qFDGN79L58pgaUZUC/giphy.gif)
 
-* BamazonManager.js (https://www.youtube.com/watch?v=Go828nrwaLY)
+3. Increase stocks of a product in market-
+* ![managerBamazon.js](https://media.giphy.com/media/iNcuWWXiHKFU7f1h4n/giphy.gif)
 
-* ExecutiveManager.js (https://www.youtube.com/watch?v=W6P2YpXGDq8)
+4. Add a new product
+* ![managerBamazon](https://media.giphy.com/media/9zXItJT6jqo875T7o5/giphy.gif)
+
 
 ## Technologies used
 - Node.js
-- Inquire NPM Package (https://www.npmjs.com/package/inquirer)
-- MYSQL NPM Package (https://www.npmjs.com/package/mysql)
+- [Inquirer NPM Package](https://www.npmjs.com/package/inquirer)
+- [MYSQL NPM Package](https://www.npmjs.com/package/mysql)
 
 ### Prerequisites
 
@@ -85,10 +82,10 @@ Created during Week 12 of Rutgers Coding Bootcamp. The goal was to create an Ama
 
 ## Built With
 
-* Sublime Text - Text Editor
-* MySQLWorkbench
-* Terminal/Gitbash
+* MySQL/Workbench
+* Terminal
+* node
 
-## Authors
+## Author
 
-* **Stefanie Ding** - *JS/MySQL/Node.js* - [Stefanie Ding](https://github.com/StefanieDing)
+Harsh Patel
