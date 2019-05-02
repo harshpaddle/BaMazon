@@ -1,6 +1,6 @@
-// require("dotenv").config();
+require("dotenv").config();
 
-// var keys = require("./keys");
+var keys = require("./keys");
 
 var mysql = require("mysql");
 
@@ -9,8 +9,8 @@ var inquirer = require("inquirer");
 var market_db = mysql.createConnection({
   host: "localhost",
   port: "3306",
-  user: "root",
-  password: "root1234",
+  user: `${keys.credential.id}`,
+  password: `${keys.credential.secret}`,
   database: "bamazon_db"
 });
 
